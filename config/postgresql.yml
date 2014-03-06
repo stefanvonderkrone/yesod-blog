@@ -1,0 +1,24 @@
+Default: &defaults
+  user: yesod-blog
+  password: yesod-blog
+  host: localhost
+  port: 5432
+  database: yesod-blog
+  poolsize: 10
+
+Development:
+  <<: *defaults
+
+Testing:
+  database: yesod-blog_test
+  <<: *defaults
+
+Staging:
+  database: yesod-blog_staging
+  poolsize: 100
+  <<: *defaults
+
+Production:
+  database: yesod-blog_production
+  poolsize: 100
+  <<: *defaults
